@@ -639,7 +639,7 @@
             </div>
 
             <!-- Next button, unlocks when checklist complete -->
-            <button id="p2-next" class="btn-next" data-next="2" disabled>
+            <button id="p2-next" class="btn-next" data-next="2">
                 To The Challenge <i class="fa-solid fa-arrow-right"></i>
             </button>
             <div class="clear"></div>
@@ -732,7 +732,7 @@
             chks.forEach((check, index) => {
                 check.addEventListener('change', () => {
                     const checkedCount = document.querySelectorAll('.p2-chk:checked').length;
-                    p2NextButton.disabled = (checkedCount !== 3);
+                    // Button remains active by default
 
                     if (checkedCount === 0) {
                         info.innerHTML = `
@@ -900,7 +900,7 @@
 
             function resetSimulation() {
                 chks.forEach(c => c.checked = false);
-                if (p2NextButton) p2NextButton.disabled = true;
+                // Button remains active by default
                 info.innerHTML = `
                     <h3><i class="fa-solid fa-lightbulb"></i> Media Roles Learning Zone</h3>
                     <p>Complete all three activities in the checklist above to unlock the simulation challenge. Explore the 8 roles of democratic media below to verify how journalists build public trust.</p>
